@@ -1,0 +1,3989 @@
+Financial_Aggregate_1:
+  args:
+    column_name: Financial_Aggregate_1
+    added_accounts:
+    - G_692
+    - Amortisman_ve_Itfa_Giderleri
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_2:
+  args:
+    column_name: Financial_Aggregate_2
+    added_accounts:
+    - P_3
+    - P_4
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_3:
+  args:
+    column_name: Financial_Aggregate_3
+    added_accounts:
+    - P_3
+    - P_4
+    subtracted_accounts:
+    - P_331
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_4:
+  args:
+    column_name: Financial_Aggregate_4
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_5:
+  args:
+    column_name: Financial_Aggregate_5
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - P_331
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_6:
+  args:
+    column_name: Financial_Aggregate_6
+    added_accounts:
+    - G_60
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_7:
+  args:
+    column_name: Financial_Aggregate_7
+    added_accounts:
+    - P_3
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_8:
+  args:
+    column_name: Financial_Aggregate_8
+    added_accounts:
+    - G_62
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_9:
+  args:
+    column_name: Financial_Aggregate_9
+    added_accounts:
+    - P_30
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_10:
+  args:
+    column_name: Financial_Aggregate_10
+    added_accounts:
+    - P_400
+    - P_300
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_11:
+  args:
+    column_name: Financial_Aggregate_11
+    added_accounts:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_12:
+  args:
+    column_name: Financial_Aggregate_12
+    added_accounts:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - A_12
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_13:
+  args:
+    column_name: Financial_Aggregate_13
+    added_accounts:
+    - G_600
+    - G_601
+    - G_602
+    subtracted_accounts:
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_14:
+  args:
+    column_name: Financial_Aggregate_14
+    added_accounts:
+    - G_642
+    - G_646
+    subtracted_accounts:
+    - G_66
+    - G_656
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_15:
+  args:
+    column_name: Financial_Aggregate_15
+    added_accounts:
+    - P_42
+    - P_32
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_16:
+  args:
+    column_name: Financial_Aggregate_16
+    added_accounts:
+    - G_62
+    - G_63
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_17:
+  args:
+    column_name: Financial_Aggregate_17
+    added_accounts:
+    - G_60
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+    - G_63
+    subtracted_accounts:
+    - G_600
+    - G_601
+    - G_602
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_18:
+  args:
+    column_name: Financial_Aggregate_18
+    added_accounts:
+    - G_692
+    - G_66
+    - G_691
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_19:
+  args:
+    column_name: Financial_Aggregate_19
+    added_accounts:
+    - G_692
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_20:
+  args:
+    column_name: Financial_Aggregate_20
+    added_accounts:
+    - P_5
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_21:
+  args:
+    column_name: Financial_Aggregate_21
+    added_accounts:
+    - P_3
+    subtracted_accounts:
+    - P_331
+    - A_11
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_22:
+  args:
+    column_name: Financial_Aggregate_22
+    added_accounts:
+    - P_3
+    subtracted_accounts:
+    - P_331
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_23:
+  args:
+    column_name: Financial_Aggregate_23
+    added_accounts:
+    - G_66
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_24:
+  args:
+    column_name: Financial_Aggregate_24
+    added_accounts:
+    - G_66
+    - G_646
+    subtracted_accounts:
+    - G_656
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_25:
+  args:
+    column_name: Financial_Aggregate_25
+    added_accounts:
+    - G_66
+    - G_656
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_26:
+  args:
+    column_name: Financial_Aggregate_26
+    added_accounts:
+    - P_40
+    - P_30
+    subtracted_accounts:
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_28:
+  args:
+    column_name: Financial_Aggregate_28
+    added_accounts:
+    - P_4
+    - P_3
+    subtracted_accounts:
+    - P_331
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_29:
+  args:
+    column_name: Financial_Aggregate_29
+    added_accounts:
+    - G_690
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_30:
+  args:
+    column_name: Financial_Aggregate_30
+    added_accounts:
+    - P_5
+    subtracted_accounts:
+    - A_26
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_31:
+  args:
+    column_name: Financial_Aggregate_31
+    added_accounts:
+    - P_30
+    - P_40
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_32:
+  args:
+    column_name: Financial_Aggregate_32
+    added_accounts:
+    - P_3
+    subtracted_accounts:
+    - P_4
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_33:
+  args:
+    column_name: Financial_Aggregate_33
+    added_accounts:
+    - P_5
+    subtracted_accounts:
+    - A_26
+    - A_131
+    - A_132
+    - A_231
+    - A_232
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_34:
+  args:
+    column_name: Financial_Aggregate_34
+    added_accounts:
+    - P_30
+    - P_40
+    subtracted_accounts:
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_35:
+  args:
+    column_name: Financial_Aggregate_35
+    added_accounts:
+    - G_690
+    - Amortisman_ve_Itfa_Giderleri
+    - P_472
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_36:
+  args:
+    column_name: Financial_Aggregate_36
+    added_accounts:
+    - P_3
+    subtracted_accounts:
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_37:
+  args:
+    column_name: Financial_Aggregate_37
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - A_10
+    - P_331
+    - P_431
+    - P_340
+    - P_440
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_38:
+  args:
+    column_name: Financial_Aggregate_38
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_39:
+  args:
+    column_name: Financial_Aggregate_39
+    added_accounts:
+    - A_1
+    - A_2
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_40:
+  args:
+    column_name: Financial_Aggregate_40
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_41:
+  args:
+    column_name: Financial_Aggregate_41
+    added_accounts:
+    - G_600
+    - G_601
+    - G_602
+    subtracted_accounts:
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+    - G_63
+    - G_66
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_42:
+  args:
+    column_name: Financial_Aggregate_42
+    added_accounts:
+    - P_3
+    subtracted_accounts:
+    - A_10
+    - P_331
+    - P_340
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_43:
+  args:
+    column_name: Financial_Aggregate_43
+    added_accounts:
+    - A_25
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_44:
+  args:
+    column_name: Financial_Aggregate_44
+    added_accounts:
+    - G_600
+    - G_601
+    - G_602
+    subtracted_accounts:
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_45:
+  args:
+    column_name: Financial_Aggregate_45
+    added_accounts:
+    - G_600
+    - G_601
+    - G_602
+    subtracted_accounts:
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+    - G_63
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_46:
+  args:
+    column_name: Financial_Aggregate_46
+    added_accounts:
+    - P_4
+    - P_3
+    subtracted_accounts:
+    - A_1
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_47:
+  args:
+    column_name: Financial_Aggregate_47
+    added_accounts:
+    - A_12
+    - A_15
+    subtracted_accounts:
+    - P_32
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_48:
+  args:
+    column_name: Financial_Aggregate_48
+    added_accounts:
+    - A_1
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_49:
+  args:
+    column_name: Financial_Aggregate_49
+    added_accounts:
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_50:
+  args:
+    column_name: Financial_Aggregate_50
+    added_accounts:
+    - A_150
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_51:
+  args:
+    column_name: Financial_Aggregate_51
+    added_accounts:
+    - A_151
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_52:
+  args:
+    column_name: Financial_Aggregate_52
+    added_accounts:
+    - A_24
+    - A_25
+    - A_26
+    - A_29
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_53:
+  args:
+    column_name: Financial_Aggregate_53
+    added_accounts:
+    - G_63
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_54:
+  args:
+    column_name: Financial_Aggregate_54
+    added_accounts:
+    - P_5
+    - P_4
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_55:
+  args:
+    column_name: Financial_Aggregate_55
+    added_accounts:
+    - P_5
+    - P_40
+    - P_42
+    - P_43
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_56:
+  args:
+    column_name: Financial_Aggregate_56
+    added_accounts:
+    - A_2
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_57:
+  args:
+    column_name: Financial_Aggregate_57
+    added_accounts:
+    - A_2
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_58:
+  args:
+    column_name: Financial_Aggregate_58
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    - P_47
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_59:
+  args:
+    column_name: Financial_Aggregate_59
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    - P_47
+    subtracted_accounts:
+    - P_331
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_60:
+  args:
+    column_name: Financial_Aggregate_60
+    added_accounts:
+    - P_4
+    - P_3
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_61:
+  args:
+    column_name: Financial_Aggregate_61
+    added_accounts:
+    - P_40
+    - P_42
+    - P_30
+    - P_32
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_62:
+  args:
+    column_name: Financial_Aggregate_62
+    added_accounts:
+    - A_25
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_63:
+  args:
+    column_name: Financial_Aggregate_63
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_64:
+  args:
+    column_name: Financial_Aggregate_64
+    added_accounts:
+    - P_3
+    - P_4
+    subtracted_accounts:
+    - P_331
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_65:
+  args:
+    column_name: Financial_Aggregate_65
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    subtracted_accounts:
+    - P_431
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_66:
+  args:
+    column_name: Financial_Aggregate_66
+    added_accounts:
+    - P_40
+    - P_43
+    - P_47
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_67:
+  args:
+    column_name: Financial_Aggregate_67
+    added_accounts:
+    - A_258
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_68:
+  args:
+    column_name: Financial_Aggregate_68
+    added_accounts:
+    - P_3
+    - P_4
+    subtracted_accounts:
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_69:
+  args:
+    column_name: Financial_Aggregate_69
+    added_accounts:
+    - P_331
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_70:
+  args:
+    column_name: Financial_Aggregate_70
+    added_accounts:
+    - A_24
+    - A_25
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_71:
+  args:
+    column_name: Financial_Aggregate_71
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_72:
+  args:
+    column_name: Financial_Aggregate_72
+    added_accounts:
+    - P_4
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_73:
+  args:
+    column_name: Financial_Aggregate_73
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_30
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_74:
+  args:
+    column_name: Financial_Aggregate_74
+    added_accounts:
+    - A_12
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_75:
+  args:
+    column_name: Financial_Aggregate_75
+    added_accounts:
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_76:
+  args:
+    column_name: Financial_Aggregate_76
+    added_accounts:
+    - A_17
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_77:
+  args:
+    column_name: Financial_Aggregate_77
+    added_accounts:
+    - A_150
+    - A_151
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_78:
+  args:
+    column_name: Financial_Aggregate_78
+    added_accounts:
+    - A_253
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_79:
+  args:
+    column_name: Financial_Aggregate_79
+    added_accounts:
+    - A_12
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_80:
+  args:
+    column_name: Financial_Aggregate_80
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - P_3
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_81:
+  args:
+    column_name: Financial_Aggregate_81
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - A_15
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_82:
+  args:
+    column_name: Financial_Aggregate_82
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - P_3
+    - P_331
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_83:
+  args:
+    column_name: Financial_Aggregate_83
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - P_32
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_84:
+  args:
+    column_name: Financial_Aggregate_84
+    added_accounts:
+    - A_1
+    - A_2
+    - P_5
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_85:
+  args:
+    column_name: Financial_Aggregate_85
+    added_accounts:
+    - A_10
+    - A_11
+    subtracted_accounts:
+    - P_30
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_86:
+  args:
+    column_name: Financial_Aggregate_86
+    added_accounts:
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_87:
+  args:
+    column_name: Financial_Aggregate_87
+    added_accounts:
+    - A_10
+    - A_11
+    - P_5
+    subtracted_accounts:
+    - P_4
+    - P_3
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_88:
+  args:
+    column_name: Financial_Aggregate_88
+    added_accounts:
+    - A_10
+    - A_11
+    - P_5
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_89:
+  args:
+    column_name: Financial_Aggregate_89
+    added_accounts:
+    - A_12
+    - A_13
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_90:
+  args:
+    column_name: Financial_Aggregate_90
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_91:
+  args:
+    column_name: Financial_Aggregate_91
+    added_accounts:
+    - A_10
+    - A_11
+    - A_12
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_92:
+  args:
+    column_name: Financial_Aggregate_92
+    added_accounts:
+    - A_12
+    - A_13
+    - A_22
+    - A_23
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_93:
+  args:
+    column_name: Financial_Aggregate_93
+    added_accounts:
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_94:
+  args:
+    column_name: Financial_Aggregate_94
+    added_accounts:
+    - A_12
+    - A_13
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_95:
+  args:
+    column_name: Financial_Aggregate_95
+    added_accounts:
+    - P_32
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_96:
+  args:
+    column_name: Financial_Aggregate_96
+    added_accounts:
+    - A_12
+    - A_13
+    - A_22
+    - A_23
+    - A_10
+    - A_11
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_97:
+  args:
+    column_name: Financial_Aggregate_97
+    added_accounts:
+    - A_10
+    - A_11
+    - A_131
+    - A_132
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_98:
+  args:
+    column_name: Financial_Aggregate_98
+    added_accounts:
+    - A_1
+    subtracted_accounts:
+    - A_10
+    - A_11
+    - A_15
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_99:
+  args:
+    column_name: Financial_Aggregate_99
+    added_accounts:
+    - G_66
+    subtracted_accounts:
+    - G_642
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_100:
+  args:
+    column_name: Financial_Aggregate_100
+    added_accounts:
+    - P_30
+    - P_40
+    - G_66
+    subtracted_accounts:
+    - A_10
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_101:
+  args:
+    column_name: Financial_Aggregate_101
+    added_accounts:
+    - P_35
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    subtracted_accounts:
+    - A_17
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_102:
+  args:
+    column_name: Financial_Aggregate_102
+    added_accounts:
+    - P_30
+    - G_66
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_103:
+  args:
+    column_name: Financial_Aggregate_103
+    added_accounts:
+    - P_30
+    - P_40
+    - G_66
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_104:
+  args:
+    column_name: Financial_Aggregate_104
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    subtracted_accounts:
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_105:
+  args:
+    column_name: Financial_Aggregate_105
+    added_accounts:
+    - P_35
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - G_600
+    - G_601
+    - G_602
+    subtracted_accounts:
+    - A_17
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_106:
+  args:
+    column_name: Financial_Aggregate_106
+    added_accounts:
+    - A_1
+    - A_2
+    subtracted_accounts:
+    - A_17
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_107:
+  args:
+    column_name: Financial_Aggregate_107
+    added_accounts:
+    - A_1
+    - A_2
+    - P_5
+    subtracted_accounts:
+    - A_17
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_108:
+  args:
+    column_name: Financial_Aggregate_108
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - P_331
+    - P_431
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_109:
+  args:
+    column_name: Financial_Aggregate_109
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_110:
+  args:
+    column_name: Financial_Aggregate_110
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    - P_47
+    subtracted_accounts:
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_111:
+  args:
+    column_name: Financial_Aggregate_111
+    added_accounts:
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    - P_47
+    subtracted_accounts:
+    - P_331
+    - P_431
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_112:
+  args:
+    column_name: Financial_Aggregate_112
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - P_431
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_113:
+  args:
+    column_name: Financial_Aggregate_113
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - A_10
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+Financial_Aggregate_114:
+  args:
+    column_name: Financial_Aggregate_114
+    added_accounts:
+    - P_40
+    - P_42
+    - P_43
+    - P_3
+    subtracted_accounts:
+    - A_10
+    - P_331
+    - P_431
+    - P_340
+    - P_440
+    - P_35
+  func: calculate_financial_aggregate
+  where: SMEFinancialFeatureProcessor
+DC_01:
+  args:
+    column_name: DC_01
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_2
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_01_adj:
+  args:
+    column_name: DC_01_adj
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_3
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_02:
+  args:
+    column_name: DC_02
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_02_adj:
+  args:
+    column_name: DC_02_adj
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_5
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_03:
+  args:
+    column_name: DC_03
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_2
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_03_adj:
+  args:
+    column_name: DC_03_adj
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_3
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_04:
+  args:
+    column_name: DC_04
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_05:
+  args:
+    column_name: DC_05
+    numerator_column_name: Financial_Aggregate_4
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_06:
+  args:
+    column_name: DC_06
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_07:
+  args:
+    column_name: DC_07
+    numerator_column_name: Financial_Aggregate_9
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_08:
+  args:
+    column_name: DC_08
+    numerator_column_name: Financial_Aggregate_10
+    denominator_column_name: Financial_Aggregate_11
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_08_adj:
+  args:
+    column_name: DC_08_adj
+    numerator_column_name: Financial_Aggregate_10
+    denominator_column_name: Financial_Aggregate_12
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_09:
+  args:
+    column_name: DC_09
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_09_adj:
+  args:
+    column_name: DC_09_adj
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_5
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_10:
+  args:
+    column_name: DC_10
+    numerator_column_name: Financial_Aggregate_10
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_11:
+  args:
+    column_name: DC_11
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_1
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_12:
+  args:
+    column_name: DC_12
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_13:
+  args:
+    column_name: DC_13
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_11
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_14:
+  args:
+    column_name: DC_14
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_15:
+  args:
+    column_name: DC_15
+    numerator_column_name: Financial_Aggregate_15
+    denominator_column_name: Financial_Aggregate_16
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_16:
+  args:
+    column_name: DC_16
+    numerator_column_name: Financial_Aggregate_15
+    denominator_column_name: Financial_Aggregate_17
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_17:
+  args:
+    column_name: DC_17
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_17_adj:
+  args:
+    column_name: DC_17_adj
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_5
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_18:
+  args:
+    column_name: DC_18
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_18_adj:
+  args:
+    column_name: DC_18_adj
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_5
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_19:
+  args:
+    column_name: DC_19
+    numerator_column_name: Financial_Aggregate_10
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_20:
+  args:
+    column_name: DC_20
+    numerator_column_name: Financial_Aggregate_2
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_20_adj:
+  args:
+    column_name: DC_20_adj
+    numerator_column_name: Financial_Aggregate_3
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_21:
+  args:
+    column_name: DC_21
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_22:
+  args:
+    column_name: DC_22
+    numerator_column_name: Financial_Aggregate_9
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_23:
+  args:
+    column_name: DC_23
+    numerator_column_name: Financial_Aggregate_21
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_24:
+  args:
+    column_name: DC_24
+    numerator_column_name: Financial_Aggregate_22
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_25:
+  args:
+    column_name: DC_25
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_23
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_26:
+  args:
+    column_name: DC_26
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_24
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_27:
+  args:
+    column_name: DC_27
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_24
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_28:
+  args:
+    column_name: DC_28
+    numerator_column_name: Financial_Aggregate_25
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_29:
+  args:
+    column_name: DC_29
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_24
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_30:
+  args:
+    column_name: DC_30
+    numerator_column_name: Financial_Aggregate_26
+    denominator_column_name: Financial_Aggregate_11
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_32:
+  args:
+    column_name: DC_32
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_28
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_33:
+  args:
+    column_name: DC_33
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_34:
+  args:
+    column_name: DC_34
+    numerator_column_name: Financial_Aggregate_2
+    denominator_column_name: Financial_Aggregate_30
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_35:
+  args:
+    column_name: DC_35
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_30
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_36:
+  args:
+    column_name: DC_36
+    numerator_column_name: Financial_Aggregate_32
+    denominator_column_name: Financial_Aggregate_33
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_37:
+  args:
+    column_name: DC_37
+    numerator_column_name: Financial_Aggregate_34
+    denominator_column_name: Financial_Aggregate_33
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_38:
+  args:
+    column_name: DC_38
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_31
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_39:
+  args:
+    column_name: DC_39
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_36
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_40:
+  args:
+    column_name: DC_40
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_37
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_41:
+  args:
+    column_name: DC_41
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_42:
+  args:
+    column_name: DC_42
+    numerator_column_name: Financial_Aggregate_38
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_43:
+  args:
+    column_name: DC_43
+    numerator_column_name: Financial_Aggregate_40
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_44:
+  args:
+    column_name: DC_44
+    numerator_column_name: Financial_Aggregate_41
+    denominator_column_name: Financial_Aggregate_36
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_45:
+  args:
+    column_name: DC_45
+    numerator_column_name: Financial_Aggregate_34
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_46:
+  args:
+    column_name: DC_46
+    numerator_column_name: Financial_Aggregate_34
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_47:
+  args:
+    column_name: DC_47
+    numerator_column_name: Financial_Aggregate_42
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_48:
+  args:
+    column_name: DC_48
+    numerator_column_name: Financial_Aggregate_36
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_49:
+  args:
+    column_name: DC_49
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_50:
+  args:
+    column_name: DC_50
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_51:
+  args:
+    column_name: DC_51
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_52:
+  args:
+    column_name: DC_52
+    numerator_column_name: Financial_Aggregate_4
+    denominator_column_name: Financial_Aggregate_43
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_53:
+  args:
+    column_name: DC_53
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_54:
+  args:
+    column_name: DC_54
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_55:
+  args:
+    column_name: DC_55
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_31
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_56:
+  args:
+    column_name: DC_56
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_23
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_57:
+  args:
+    column_name: DC_57
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_34
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_58:
+  args:
+    column_name: DC_58
+    numerator_column_name: Financial_Aggregate_45
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_59:
+  args:
+    column_name: DC_59
+    numerator_column_name: Financial_Aggregate_30
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_60:
+  args:
+    column_name: DC_60
+    numerator_column_name: Financial_Aggregate_30
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_61:
+  args:
+    column_name: DC_61
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_62:
+  args:
+    column_name: DC_62
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_63:
+  args:
+    column_name: DC_63
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_64:
+  args:
+    column_name: DC_64
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_65:
+  args:
+    column_name: DC_65
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_40
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_66:
+  args:
+    column_name: DC_66
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_34
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_67:
+  args:
+    column_name: DC_67
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_38
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+DC_68:
+  args:
+    column_name: DC_68
+    numerator_column_name: Financial_Aggregate_46
+    denominator_column_name: Financial_Aggregate_11
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_01:
+  args:
+    column_name: EF_01
+    numerator_column_name: Financial_Aggregate_47
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_02:
+  args:
+    column_name: EF_02
+    numerator_column_name: Financial_Aggregate_48
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_03:
+  args:
+    column_name: EF_03
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_04:
+  args:
+    column_name: EF_04
+    numerator_column_name: Financial_Aggregate_49
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_05:
+  args:
+    column_name: EF_05
+    numerator_column_name: Financial_Aggregate_50
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_06:
+  args:
+    column_name: EF_06
+    numerator_column_name: Financial_Aggregate_51
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_07:
+  args:
+    column_name: EF_07
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_08:
+  args:
+    column_name: EF_08
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_09:
+  args:
+    column_name: EF_09
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_10:
+  args:
+    column_name: EF_10
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_11:
+  args:
+    column_name: EF_11
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_12:
+  args:
+    column_name: EF_12
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_15:
+  args:
+    column_name: EF_15
+    numerator_column_name: Financial_Aggregate_52
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_16:
+  args:
+    column_name: EF_16
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_18:
+  args:
+    column_name: EF_18
+    numerator_column_name: Financial_Aggregate_49
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_21:
+  args:
+    column_name: EF_21
+    numerator_column_name: Financial_Aggregate_53
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_22:
+  args:
+    column_name: EF_22
+    numerator_column_name: Financial_Aggregate_8
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_01:
+  args:
+    column_name: FS_01
+    numerator_column_name: Financial_Aggregate_54
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_02:
+  args:
+    column_name: FS_02
+    numerator_column_name: Financial_Aggregate_55
+    denominator_column_name: Financial_Aggregate_56
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_03:
+  args:
+    column_name: FS_03
+    numerator_column_name: Financial_Aggregate_55
+    denominator_column_name: Financial_Aggregate_57
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_04:
+  args:
+    column_name: FS_04
+    numerator_column_name: Financial_Aggregate_54
+    denominator_column_name: Financial_Aggregate_22
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_05:
+  args:
+    column_name: FS_05
+    numerator_column_name: Financial_Aggregate_58
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_05_adj:
+  args:
+    column_name: FS_05_adj
+    numerator_column_name: Financial_Aggregate_59
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_06:
+  args:
+    column_name: FS_06
+    numerator_column_name: Financial_Aggregate_58
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_06_adj:
+  args:
+    column_name: FS_06_adj
+    numerator_column_name: Financial_Aggregate_59
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_07:
+  args:
+    column_name: FS_07
+    numerator_column_name: Financial_Aggregate_22
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_09:
+  args:
+    column_name: FS_09
+    numerator_column_name: Financial_Aggregate_61
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_10:
+  args:
+    column_name: FS_10
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_11:
+  args:
+    column_name: FS_11
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_13:
+  args:
+    column_name: FS_13
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_14:
+  args:
+    column_name: FS_14
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_62
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_15:
+  args:
+    column_name: FS_15
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_57
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_16:
+  args:
+    column_name: FS_16
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_17:
+  args:
+    column_name: FS_17
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_9
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_18:
+  args:
+    column_name: FS_18
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_43
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_19:
+  args:
+    column_name: FS_19
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_4
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_19_adj:
+  args:
+    column_name: FS_19_adj
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_5
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_20:
+  args:
+    column_name: FS_20
+    numerator_column_name: Financial_Aggregate_54
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_21:
+  args:
+    column_name: FS_21
+    numerator_column_name: Financial_Aggregate_54
+    denominator_column_name: Financial_Aggregate_57
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_22:
+  args:
+    column_name: FS_22
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_31
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_23:
+  args:
+    column_name: FS_23
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_63
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_24:
+  args:
+    column_name: FS_24
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_64
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_25:
+  args:
+    column_name: FS_25
+    numerator_column_name: Financial_Aggregate_63
+    denominator_column_name: Financial_Aggregate_56
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_25_adj:
+  args:
+    column_name: FS_25_adj
+    numerator_column_name: Financial_Aggregate_65
+    denominator_column_name: Financial_Aggregate_56
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_26:
+  args:
+    column_name: FS_26
+    numerator_column_name: Financial_Aggregate_66
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_27:
+  args:
+    column_name: FS_27
+    numerator_column_name: Financial_Aggregate_63
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_28:
+  args:
+    column_name: FS_28
+    numerator_column_name: Financial_Aggregate_67
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_29:
+  args:
+    column_name: FS_29
+    numerator_column_name: Financial_Aggregate_68
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_30:
+  args:
+    column_name: FS_30
+    numerator_column_name: Financial_Aggregate_63
+    denominator_column_name: Financial_Aggregate_57
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_31:
+  args:
+    column_name: FS_31
+    numerator_column_name: Financial_Aggregate_69
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_32:
+  args:
+    column_name: FS_32
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_33:
+  args:
+    column_name: FS_33
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_34:
+  args:
+    column_name: FS_34
+    numerator_column_name: Financial_Aggregate_9
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_35:
+  args:
+    column_name: FS_35
+    numerator_column_name: Financial_Aggregate_70
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_36:
+  args:
+    column_name: FS_36
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_54
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_37:
+  args:
+    column_name: FS_37
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_38:
+  args:
+    column_name: FS_38
+    numerator_column_name: Financial_Aggregate_71
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_39:
+  args:
+    column_name: FS_39
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_40:
+  args:
+    column_name: FS_40
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_41:
+  args:
+    column_name: FS_41
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_63
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_42:
+  args:
+    column_name: FS_42
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_72
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_43:
+  args:
+    column_name: FS_43
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_73
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_44:
+  args:
+    column_name: FS_44
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_45:
+  args:
+    column_name: FS_45
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_46:
+  args:
+    column_name: FS_46
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_58
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_47:
+  args:
+    column_name: FS_47
+    numerator_column_name: Financial_Aggregate_55
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_48:
+  args:
+    column_name: FS_48
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_49:
+  args:
+    column_name: FS_49
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_50:
+  args:
+    column_name: FS_50
+    numerator_column_name: Financial_Aggregate_60
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_51:
+  args:
+    column_name: FS_51
+    numerator_column_name: Financial_Aggregate_74
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_52:
+  args:
+    column_name: FS_52
+    numerator_column_name: Financial_Aggregate_74
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_54_CONT:
+  args:
+    column_name: FS_54_CONT
+    numerator_column_name: Financial_Aggregate_75
+    denominator_column_name: Financial_Aggregate_76
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_57:
+  args:
+    column_name: FS_57
+    numerator_column_name: Financial_Aggregate_77
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_58:
+  args:
+    column_name: FS_58
+    numerator_column_name: Financial_Aggregate_57
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_59:
+  args:
+    column_name: FS_59
+    numerator_column_name: Financial_Aggregate_30
+    denominator_column_name: Financial_Aggregate_43
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_60:
+  args:
+    column_name: FS_60
+    numerator_column_name: Financial_Aggregate_78
+    denominator_column_name: Financial_Aggregate_43
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_01:
+  args:
+    column_name: LQ_01
+    numerator_column_name: Financial_Aggregate_48
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_02:
+  args:
+    column_name: LQ_02
+    numerator_column_name: Financial_Aggregate_79
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_03:
+  args:
+    column_name: LQ_03
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_80
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_04:
+  args:
+    column_name: LQ_04
+    numerator_column_name: Financial_Aggregate_81
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_04_adj:
+  args:
+    column_name: LQ_04_adj
+    numerator_column_name: Financial_Aggregate_81
+    denominator_column_name: Financial_Aggregate_22
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_05:
+  args:
+    column_name: LQ_05
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_05_adj:
+  args:
+    column_name: LQ_05_adj
+    numerator_column_name: Financial_Aggregate_82
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_06:
+  args:
+    column_name: LQ_06
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_06_adj:
+  args:
+    column_name: LQ_06_adj
+    numerator_column_name: Financial_Aggregate_82
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_07:
+  args:
+    column_name: LQ_07
+    numerator_column_name: Financial_Aggregate_83
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_08:
+  args:
+    column_name: LQ_08
+    numerator_column_name: Financial_Aggregate_83
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_09:
+  args:
+    column_name: LQ_09
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_84
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_10:
+  args:
+    column_name: LQ_10
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_11:
+  args:
+    column_name: LQ_11
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_12:
+  args:
+    column_name: LQ_12
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_54
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_15:
+  args:
+    column_name: LQ_15
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_16:
+  args:
+    column_name: LQ_16
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_49
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_17:
+  args:
+    column_name: LQ_17
+    numerator_column_name: Financial_Aggregate_85
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_18:
+  args:
+    column_name: LQ_18
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_19:
+  args:
+    column_name: LQ_19
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_20:
+  args:
+    column_name: LQ_20
+    numerator_column_name: Financial_Aggregate_48
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_21:
+  args:
+    column_name: LQ_21
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_22:
+  args:
+    column_name: LQ_22
+    numerator_column_name: Financial_Aggregate_83
+    denominator_column_name: Financial_Aggregate_9
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_23:
+  args:
+    column_name: LQ_23
+    numerator_column_name: Financial_Aggregate_87
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_24:
+  args:
+    column_name: LQ_24
+    numerator_column_name: Financial_Aggregate_87
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_25:
+  args:
+    column_name: LQ_25
+    numerator_column_name: Financial_Aggregate_88
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_26:
+  args:
+    column_name: LQ_26
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_80
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_27:
+  args:
+    column_name: LQ_27
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_28:
+  args:
+    column_name: LQ_28
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_86
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_29:
+  args:
+    column_name: LQ_29
+    numerator_column_name: Financial_Aggregate_49
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_30:
+  args:
+    column_name: LQ_30
+    numerator_column_name: Financial_Aggregate_89
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_31:
+  args:
+    column_name: LQ_31
+    numerator_column_name: Financial_Aggregate_89
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_32:
+  args:
+    column_name: LQ_32
+    numerator_column_name: Financial_Aggregate_89
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_33:
+  args:
+    column_name: LQ_33
+    numerator_column_name: Financial_Aggregate_90
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_34:
+  args:
+    column_name: LQ_34
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_35:
+  args:
+    column_name: LQ_35
+    numerator_column_name: Financial_Aggregate_91
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_36:
+  args:
+    column_name: LQ_36
+    numerator_column_name: Financial_Aggregate_74
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_37:
+  args:
+    column_name: LQ_37
+    numerator_column_name: Financial_Aggregate_74
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_38:
+  args:
+    column_name: LQ_38
+    numerator_column_name: Financial_Aggregate_91
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_39:
+  args:
+    column_name: LQ_39
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_92
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_40:
+  args:
+    column_name: LQ_40
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_92
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_41:
+  args:
+    column_name: LQ_41
+    numerator_column_name: Financial_Aggregate_93
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_42:
+  args:
+    column_name: LQ_42
+    numerator_column_name: Financial_Aggregate_94
+    denominator_column_name: Financial_Aggregate_48
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_43:
+  args:
+    column_name: LQ_43
+    numerator_column_name: Financial_Aggregate_95
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_44:
+  args:
+    column_name: LQ_44
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_22
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_45:
+  args:
+    column_name: LQ_45
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_46:
+  args:
+    column_name: LQ_46
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_86
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_47:
+  args:
+    column_name: LQ_47
+    numerator_column_name: Financial_Aggregate_48
+    denominator_column_name: Financial_Aggregate_22
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_48:
+  args:
+    column_name: LQ_48
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_49:
+  args:
+    column_name: LQ_49
+    numerator_column_name: Financial_Aggregate_96
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_51:
+  args:
+    column_name: LQ_51
+    numerator_column_name: Financial_Aggregate_97
+    denominator_column_name: Financial_Aggregate_22
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_52:
+  args:
+    column_name: LQ_52
+    numerator_column_name: Financial_Aggregate_96
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_53:
+  args:
+    column_name: LQ_53
+    numerator_column_name: Financial_Aggregate_98
+    denominator_column_name: Financial_Aggregate_7
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_01:
+  args:
+    column_name: PROF_01
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_02:
+  args:
+    column_name: PROF_02
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_03:
+  args:
+    column_name: PROF_03
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_18
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_04:
+  args:
+    column_name: PROF_04
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_05:
+  args:
+    column_name: PROF_05
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_06:
+  args:
+    column_name: PROF_06
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_07:
+  args:
+    column_name: PROF_07
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_19
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_08:
+  args:
+    column_name: PROF_08
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_18
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_09:
+  args:
+    column_name: PROF_09
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_10:
+  args:
+    column_name: PROF_10
+    numerator_column_name: Financial_Aggregate_57
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_11:
+  args:
+    column_name: PROF_11
+    numerator_column_name: Financial_Aggregate_57
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_12:
+  args:
+    column_name: PROF_12
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_13:
+  args:
+    column_name: PROF_13
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_14:
+  args:
+    column_name: PROF_14
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_15:
+  args:
+    column_name: PROF_15
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_11
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_16:
+  args:
+    column_name: PROF_16
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_17:
+  args:
+    column_name: PROF_17
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_18:
+  args:
+    column_name: PROF_18
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_29
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_19:
+  args:
+    column_name: PROF_19
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_20:
+  args:
+    column_name: PROF_20
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_60
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_21:
+  args:
+    column_name: PROF_21
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_29
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_22:
+  args:
+    column_name: PROF_22
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_29
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_23:
+  args:
+    column_name: PROF_23
+    numerator_column_name: Financial_Aggregate_45
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_24:
+  args:
+    column_name: PROF_24
+    numerator_column_name: Financial_Aggregate_45
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_25:
+  args:
+    column_name: PROF_25
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_26:
+  args:
+    column_name: PROF_26
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_27:
+  args:
+    column_name: PROF_27
+    numerator_column_name: Financial_Aggregate_45
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_28:
+  args:
+    column_name: PROF_28
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_24
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_29:
+  args:
+    column_name: PROF_29
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_30:
+  args:
+    column_name: PROF_30
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_31:
+  args:
+    column_name: PROF_31
+    numerator_column_name: Financial_Aggregate_45
+    denominator_column_name: Financial_Aggregate_19
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_34:
+  args:
+    column_name: PROF_34
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_35:
+  args:
+    column_name: PROF_35
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_36:
+  args:
+    column_name: PROF_36
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_01:
+  args:
+    column_name: CONST_01
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_9
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_02:
+  args:
+    column_name: CONST_02
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_102
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_03:
+  args:
+    column_name: CONST_03
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_04:
+  args:
+    column_name: CONST_04
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_31
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_05:
+  args:
+    column_name: CONST_05
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_103
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_08:
+  args:
+    column_name: CONST_08
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_71
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_10:
+  args:
+    column_name: CONST_10
+    numerator_column_name: Financial_Aggregate_101
+    denominator_column_name: Financial_Aggregate_104
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_12:
+  args:
+    column_name: CONST_12
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_9
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_13:
+  args:
+    column_name: CONST_13
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_102
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_14:
+  args:
+    column_name: CONST_14
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_20
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_15:
+  args:
+    column_name: CONST_15
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_31
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_16:
+  args:
+    column_name: CONST_16
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_103
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_19:
+  args:
+    column_name: CONST_19
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_71
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_21:
+  args:
+    column_name: CONST_21
+    numerator_column_name: Financial_Aggregate_105
+    denominator_column_name: Financial_Aggregate_104
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_45:
+  args:
+    column_name: CONST_DC_45
+    numerator_column_name: Financial_Aggregate_34
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_25:
+  args:
+    column_name: CONST_LQ_25
+    numerator_column_name: Financial_Aggregate_88
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_29:
+  args:
+    column_name: CONST_FS_29
+    numerator_column_name: Financial_Aggregate_68
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_17:
+  args:
+    column_name: CONST_LQ_17
+    numerator_column_name: Financial_Aggregate_85
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_23:
+  args:
+    column_name: CONST_LQ_23
+    numerator_column_name: Financial_Aggregate_87
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_09:
+  args:
+    column_name: CONST_PROF_09
+    numerator_column_name: Financial_Aggregate_14
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_39:
+  args:
+    column_name: CONST_FS_39
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_50:
+  args:
+    column_name: CONST_FS_50
+    numerator_column_name: Financial_Aggregate_60
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_06:
+  args:
+    column_name: CONST_PROF_06
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_26:
+  args:
+    column_name: CONST_FS_26
+    numerator_column_name: Financial_Aggregate_66
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_19:
+  args:
+    column_name: CONST_PROF_19
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_04:
+  args:
+    column_name: CONST_PROF_04
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_10:
+  args:
+    column_name: CONST_FS_10
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_48:
+  args:
+    column_name: CONST_FS_48
+    numerator_column_name: Financial_Aggregate_31
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_19:
+  args:
+    column_name: CONST_LQ_19
+    numerator_column_name: Financial_Aggregate_86
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_35:
+  args:
+    column_name: CONST_FS_35
+    numerator_column_name: Financial_Aggregate_70
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_EF_07:
+  args:
+    column_name: CONST_EF_07
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_EF_08:
+  args:
+    column_name: CONST_EF_08
+    numerator_column_name: Financial_Aggregate_6
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_49:
+  args:
+    column_name: CONST_LQ_49
+    numerator_column_name: Financial_Aggregate_96
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_09:
+  args:
+    column_name: CONST_LQ_09
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_107
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_20:
+  args:
+    column_name: CONST_LQ_20
+    numerator_column_name: Financial_Aggregate_48
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_58:
+  args:
+    column_name: CONST_FS_58
+    numerator_column_name: Financial_Aggregate_57
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_37:
+  args:
+    column_name: CONST_FS_37
+    numerator_column_name: Financial_Aggregate_43
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_35:
+  args:
+    column_name: CONST_PROF_35
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_32:
+  args:
+    column_name: CONST_FS_32
+    numerator_column_name: Financial_Aggregate_7
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_47:
+  args:
+    column_name: CONST_FS_47
+    numerator_column_name: Financial_Aggregate_55
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_26:
+  args:
+    column_name: CONST_PROF_26
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_10:
+  args:
+    column_name: CONST_LQ_10
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_21:
+  args:
+    column_name: CONST_LQ_21
+    numerator_column_name: Financial_Aggregate_80
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_PROF_16:
+  args:
+    column_name: CONST_PROF_16
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_20:
+  args:
+    column_name: CONST_FS_20
+    numerator_column_name: Financial_Aggregate_54
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_47:
+  args:
+    column_name: CONST_DC_47
+    numerator_column_name: Financial_Aggregate_42
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_LQ_35:
+  args:
+    column_name: CONST_LQ_35
+    numerator_column_name: Financial_Aggregate_91
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_19_adj:
+  args:
+    column_name: CONST_FS_19_adj
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_108
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_02_adj:
+  args:
+    column_name: CONST_DC_02_adj
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_108
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_19:
+  args:
+    column_name: CONST_FS_19
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_46:
+  args:
+    column_name: CONST_FS_46
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_110
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_02:
+  args:
+    column_name: CONST_DC_02
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_18_adj:
+  args:
+    column_name: CONST_DC_18_adj
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_108
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_18:
+  args:
+    column_name: CONST_DC_18
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_38:
+  args:
+    column_name: CONST_FS_38
+    numerator_column_name: Financial_Aggregate_104
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_05:
+  args:
+    column_name: CONST_DC_05
+    numerator_column_name: Financial_Aggregate_104
+    denominator_column_name: Financial_Aggregate_8
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_05_adj:
+  args:
+    column_name: CONST_FS_05_adj
+    numerator_column_name: Financial_Aggregate_111
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_06_adj:
+  args:
+    column_name: CONST_FS_06_adj
+    numerator_column_name: Financial_Aggregate_111
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_05:
+  args:
+    column_name: CONST_FS_05
+    numerator_column_name: Financial_Aggregate_110
+    denominator_column_name: Financial_Aggregate_6
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_06:
+  args:
+    column_name: CONST_FS_06
+    numerator_column_name: Financial_Aggregate_110
+    denominator_column_name: Financial_Aggregate_13
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_09_adj:
+  args:
+    column_name: CONST_DC_09_adj
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_108
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_17_adj:
+  args:
+    column_name: CONST_DC_17_adj
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_108
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_09:
+  args:
+    column_name: CONST_DC_09
+    numerator_column_name: Financial_Aggregate_11
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_17:
+  args:
+    column_name: CONST_DC_17
+    numerator_column_name: Financial_Aggregate_18
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_65:
+  args:
+    column_name: CONST_DC_65
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_59:
+  args:
+    column_name: CONST_DC_59
+    numerator_column_name: Financial_Aggregate_30
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_51:
+  args:
+    column_name: CONST_DC_51
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_61:
+  args:
+    column_name: CONST_DC_61
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_60:
+  args:
+    column_name: CONST_DC_60
+    numerator_column_name: Financial_Aggregate_30
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_49:
+  args:
+    column_name: CONST_DC_49
+    numerator_column_name: Financial_Aggregate_1
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_50:
+  args:
+    column_name: CONST_DC_50
+    numerator_column_name: Financial_Aggregate_29
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_67:
+  args:
+    column_name: CONST_DC_67
+    numerator_column_name: Financial_Aggregate_20
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_42:
+  args:
+    column_name: CONST_DC_42
+    numerator_column_name: Financial_Aggregate_113
+    denominator_column_name: Financial_Aggregate_106
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_62:
+  args:
+    column_name: CONST_DC_62
+    numerator_column_name: Financial_Aggregate_19
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_40:
+  args:
+    column_name: CONST_DC_40
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_114
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_43:
+  args:
+    column_name: CONST_DC_43
+    numerator_column_name: Financial_Aggregate_112
+    denominator_column_name: Financial_Aggregate_39
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_41:
+  args:
+    column_name: CONST_DC_41
+    numerator_column_name: Financial_Aggregate_35
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_52:
+  args:
+    column_name: CONST_DC_52
+    numerator_column_name: Financial_Aggregate_109
+    denominator_column_name: Financial_Aggregate_43
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_63:
+  args:
+    column_name: CONST_DC_63
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_54:
+  args:
+    column_name: CONST_DC_54
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_112
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_53:
+  args:
+    column_name: CONST_DC_53
+    numerator_column_name: Financial_Aggregate_44
+    denominator_column_name: Financial_Aggregate_109
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_DC_64:
+  args:
+    column_name: CONST_DC_64
+    numerator_column_name: Financial_Aggregate_13
+    denominator_column_name: Financial_Aggregate_113
+  func: calculate_financial_ratio
+  where: SMEFinancialFeatureProcessor
+
+# ------------ Custom Features ------------
+DC_31:
+  args:
+    column_name: DC_31
+    required_columns:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - P_3
+    - P_331
+    columns_to_shift:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_13:
+  args:
+    column_name: EF_13
+    required_columns:
+    - G_60
+    - A_15
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_14:
+  args:
+    column_name: EF_14
+    required_columns:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - A_15
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_17:
+  args:
+    column_name: EF_17
+    required_columns:
+    - A_15
+    - G_62
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_19:
+  args:
+    column_name: EF_19
+    required_columns:
+    - P_32
+    - P_42
+    - G_62
+    columns_to_shift:
+    - P_32
+    - P_42
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+EF_20:
+  args:
+    column_name: EF_20
+    required_columns:
+    - A_12
+    - A_22
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    columns_to_shift:
+    - A_12
+    - A_22
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_12:
+  args:
+    column_name: FS_12
+    required_columns:
+    - P_30
+    - P_40
+    - A_1
+    - A_2
+    columns_to_shift:
+    - P_30
+    - P_40
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_53_CONT:
+  args:
+    column_name: FS_53_CONT
+    required_columns:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - P_35
+    - P_34
+    - A_17
+    - A_15
+    - G_62
+    columns_to_shift:
+    - P_35
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_55_CONT:
+  args:
+    column_name: FS_55_CONT
+    required_columns:
+    - P_35
+    - A_17
+    columns_to_shift:
+    - P_35
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+FS_56_CONT:
+  args:
+    column_name: FS_56_CONT
+    required_columns:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - P_35
+    - A_17
+    - G_62
+    columns_to_shift:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - P_35
+    - A_17
+    - G_62
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_13:
+  args:
+    column_name: LQ_13
+    required_columns:
+    - A_1
+    - P_3
+    - G_60
+    - A_15
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_14:
+  args:
+    column_name: LQ_14
+    required_columns:
+    - A_1
+    - P_3
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - A_15
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+LQ_50:
+  args:
+    column_name: LQ_50
+    required_columns:
+    - A_12
+    - A_10
+    - A_11
+    - A_15
+    - P_3
+    - P_331
+    columns_to_shift:
+    - A_15
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_32:
+  args:
+    column_name: PROF_32
+    required_columns:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - A_25
+    - G_642
+    columns_to_shift:
+    - A_25
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+PROF_33:
+  args:
+    column_name: PROF_33
+    required_columns:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - A_25
+    - P_30
+    - P_40
+    - A_10
+    columns_to_shift:
+    - A_25
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_01:
+  args:
+    column_name: TR_01
+    required_columns:
+    - G_60
+    columns_to_shift:
+    - G_60
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_04:
+  args:
+    column_name: TR_04
+    required_columns:
+    - G_692
+    columns_to_shift:
+    - G_692
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_05:
+  args:
+    column_name: TR_05
+    required_columns:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    columns_to_shift:
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_06:
+  args:
+    column_name: TR_06
+    required_columns:
+    - P_5
+    columns_to_shift:
+    - P_5
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_07:
+  args:
+    column_name: TR_07
+    required_columns:
+    - P_3
+    columns_to_shift:
+    - P_3
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_08:
+  args:
+    column_name: TR_08
+    required_columns:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+    columns_to_shift:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - G_62
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_09:
+  args:
+    column_name: TR_09
+    required_columns:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    columns_to_shift:
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_10:
+  args:
+    column_name: TR_10
+    required_columns:
+    - A_1
+    - A_2
+    columns_to_shift:
+    - A_1
+    - A_2
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_11:
+  args:
+    column_name: TR_11
+    required_columns:
+    - A_1
+    - P_3
+    columns_to_shift:
+    - A_1
+    - P_3
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_12:
+  args:
+    column_name: TR_12
+    required_columns:
+    - P_4
+    columns_to_shift:
+    - P_4
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_13:
+  args:
+    column_name: TR_13
+    required_columns:
+    - A_25
+    columns_to_shift:
+    - A_25
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_14:
+  args:
+    column_name: TR_14
+    required_columns:
+    - A_2
+    columns_to_shift:
+    - A_2
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_15:
+  args:
+    column_name: TR_15
+    required_columns:
+    - A_12
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    columns_to_shift:
+    - A_12
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_17:
+  args:
+    column_name: TR_17
+    required_columns:
+    - P_30
+    - P_40
+    columns_to_shift:
+    - P_30
+    - P_40
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_18:
+  args:
+    column_name: TR_18
+    required_columns:
+    - P_30
+    columns_to_shift:
+    - P_30
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+TR_19:
+  args:
+    column_name: TR_19
+    required_columns:
+    - P_40
+    columns_to_shift:
+    - P_40
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_06:
+  args:
+    column_name: CONST_06
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    columns_to_shift:
+    - P_35
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_07:
+  args:
+    column_name: CONST_07
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - A_12
+    - P_32
+    - P_30
+    columns_to_shift:
+    - P_35
+    - A_17
+    - A_12
+    - P_32
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_09:
+  args:
+    column_name: CONST_09
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    columns_to_shift:
+    - P_35
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_11:
+  args:
+    column_name: CONST_11
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    columns_to_shift:
+    - P_35
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_17:
+  args:
+    column_name: CONST_17
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    columns_to_shift:
+    - P_35
+    - A_17
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_18:
+  args:
+    column_name: CONST_18
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - A_12
+    - P_32
+    - P_30
+    columns_to_shift:
+    - P_35
+    - A_17
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - A_12
+    - P_32
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_20:
+  args:
+    column_name: CONST_20
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    columns_to_shift:
+    - P_35
+    - A_17
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_22:
+  args:
+    column_name: CONST_22
+    required_columns:
+    - P_35
+    - A_17
+    - G_692
+    - G_66
+    - G_691
+    - Amortisman_ve_Itfa_Giderleri
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+    - P_3
+    - P_40
+    - P_42
+    - P_43
+    columns_to_shift:
+    - P_35
+    - A_17
+    - G_600
+    - G_601
+    - G_602
+    - G_610
+    - G_611
+    - G_612
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_FS_12:
+  args:
+    column_name: CONST_FS_12
+    required_columns:
+    - P_30
+    - P_40
+    - A_1
+    - A_2
+    - A_17
+    columns_to_shift:
+    - P_30
+    - P_40
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
+CONST_TR_02:
+  args:
+    column_name: CONST_TR_02
+    required_columns:
+    - A_1
+    - A_2
+    - A_17
+    columns_to_shift:
+    - A_1
+    - A_2
+    - A_17
+  func: calculate_custom_financial_ratio
+  where: SMEFinancialFeatureProcessor
