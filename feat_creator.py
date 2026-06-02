@@ -1,5 +1,4 @@
 import yaml
-import pandas as pd
 from functools import reduce
 from pyspark.sql import functions as F
 
@@ -8,13 +7,15 @@ from pyspark.sql import functions as F
 # ============================================================
 
 YAML_PATH = "/path/to/feature_config.yml"
-INFLATION_XLSX_PATH = "/path/to/inflation_adj.xlsx"
 
 FIN_TABLE = "analytics_risk_sb.financial_features_sme_limit_prometeia_oy_v2"
-RDS_TABLE = "risk_analytics_sb.ala_target_fin"
+RDS_TABLE = "analytics_risk_sb.ala_target_curr_100_250_fin"
+INFLATION_TABLE = "src_edwlive_dm_cad.mva_inflation_rate_new"
+
 OUT_TABLE = "analytics_risk_sb.financial_features_all"
 
-KEYS = ["party_id", "close_date"]
+KEYS_FIN = ["party_id", "close_date"]
+KEYS_RDS = ["party_id", "data_date"]
 
 
 # ============================================================
@@ -39,10 +40,6 @@ def base_col_name(col_name):
 
 
 def build_signed_sum(pos_cols, neg_cols):
-    """
-    Calculates:
-      sum(pos_cols) - sum(neg_cols)
-    """
     pos_exprs = [F.coalesce(F.col(c), F.lit(0.0)) for c in pos_cols]
     neg_exprs = [F.coalesce(F.col(c), F.lit(0.0)) for c in neg_cols]
 
@@ -53,17 +50,6 @@ def build_signed_sum(pos_cols, neg_cols):
 
 
 def parse_feature_config(yaml_path):
-    """
-    Expected YAML format:
-
-    YKB_F15:
-      numerator:
-        - profit_before_int_tax_9044
-      denominator:
-        - net_sales_80
-      neg_denominator:
-        - net_sales_80_1y
-    """
     with open(yaml_path, "r") as f:
         cfg = yaml.safe_load(f)
 
@@ -124,34 +110,79 @@ print(last_year_base_cols)
 
 
 # ============================================================
-# 2. READ FINANCIAL TABLE
+# 2. READ RDS FIRST, ONLY NECESSARY COLUMNS
 # ============================================================
 
-fin_cols_to_select = KEYS + ["prev_financial_indicator"] + required_fin_cols
-
-fin = (
-    spark.table(FIN_TABLE)
-    .select(*fin_cols_to_select)
-    .withColumn("close_date", F.to_date(F.col("close_date")))
+rds = (
+    spark.table(RDS_TABLE)
+    .select(
+        F.col("party_id").cast("int").alias("party_id"),
+        F.col("data_date").cast("date").alias("data_date")
+    )
+    .dropDuplicates(["party_id", "data_date"])
 )
 
 
 # ============================================================
-# 3. GET CURRENT FINANCIALS: prev_financial_indicator = 0
+# 3. READ FINANCIAL TABLE ONLY WITH NECESSARY COLUMNS
+# close_date format example: "31.12.2019"
+# ============================================================
+
+fin_cols_to_select = (
+    ["party_id", "close_date", "prev_financial_indicator"]
+    + required_fin_cols
+)
+
+fin = (
+    spark.table(FIN_TABLE)
+    .select(*fin_cols_to_select)
+    .withColumn("party_id", F.col("party_id").cast("int"))
+    .withColumn("prev_financial_indicator", F.col("prev_financial_indicator").cast("int"))
+    .withColumn("close_date", F.to_date(F.col("close_date"), "dd.MM.yyyy"))
+)
+
+
+# ============================================================
+# 4. FILTER FINANCIALS TO ONLY RDS PARTY_ID / DATE PAIRS EARLY
+# ============================================================
+
+rds_keys_for_fin_join = (
+    rds
+    .select(
+        F.col("party_id"),
+        F.col("data_date").alias("close_date")
+    )
+    .dropDuplicates(["party_id", "close_date"])
+)
+
+fin = (
+    fin
+    .join(
+        rds_keys_for_fin_join,
+        on=["party_id", "close_date"],
+        how="inner"
+    )
+)
+
+
+# ============================================================
+# 5. SPLIT CURRENT AND LAST-YEAR FINANCIALS
 # ============================================================
 
 fin_0 = (
     fin
     .filter(F.col("prev_financial_indicator") == 0)
-    .select(*KEYS, *current_cols)
+    .select(
+        "party_id",
+        "close_date",
+        *current_cols
+    )
 )
 
-
-# ============================================================
-# 4. GET LAST-YEAR FINANCIALS: prev_financial_indicator = 1
-# ============================================================
-
-fin_1_select_exprs = KEYS + [
+fin_1_select_exprs = [
+    F.col("party_id"),
+    F.col("close_date")
+] + [
     F.col(c).alias(f"{c}_1y")
     for c in last_year_base_cols
 ]
@@ -164,55 +195,70 @@ fin_1 = (
 
 
 # ============================================================
-# 5. COMBINE CURRENT + LAST-YEAR FINANCIALS
+# 6. COMBINE CURRENT + LAST-YEAR FINANCIALS
 # ============================================================
 
 fin_wide = (
     fin_0
-    .join(fin_1, on=KEYS, how="left")
+    .join(
+        fin_1,
+        on=["party_id", "close_date"],
+        how="left"
+    )
 )
 
 
 # ============================================================
-# 6. READ INFLATION EXCEL
+# 7. READ INFLATION TABLE
+# year_month example: 202604
 # ============================================================
 
-infl_pd = pd.read_excel(INFLATION_XLSX_PATH)
-
-# Expected Excel columns:
-# date | inflation_rate
-infl_pd.columns = [c.strip().lower() for c in infl_pd.columns]
-
-infl_spark = (
-    spark.createDataFrame(infl_pd)
-    .withColumn("inflation_date", F.to_date(F.col("date")))
-    .withColumn("inflation_rate", F.col("inflation_rate").cast("double"))
-    .select("inflation_date", "inflation_rate")
+inflation = (
+    spark.table(INFLATION_TABLE)
+    .select(
+        F.col("year_month").cast("int").alias("inflation_year_month"),
+        F.col("inflation_rate").cast("double").alias("inflation_rate")
+    )
 )
 
 
 # ============================================================
-# 7. JOIN INFLATION RATE
-# Uses end of month, one month before close_date
+# 8. JOIN INFLATION RATE
+# Uses end-of-month one month before close_date.
+# Example:
+# close_date = 31.12.2019
+# inflation_year_month = 201911
 # ============================================================
 
 fin_wide = (
     fin_wide
     .withColumn(
-        "inflation_date",
-        F.last_day(F.add_months(F.col("close_date"), -1))
+        "inflation_year_month",
+        F.date_format(
+            F.last_day(F.add_months(F.col("close_date"), -1)),
+            "yyyyMM"
+        ).cast("int")
     )
-    .join(infl_spark, on="inflation_date", how="left")
+    .join(
+        inflation,
+        on="inflation_year_month",
+        how="left"
+    )
 )
 
 
 # ============================================================
-# 8. APPLY INFLATION ADJUSTMENT TO RAW FINANCIAL COLUMNS
+# 9. APPLY INFLATION ADJUSTMENT TO RAW FINANCIAL COLUMNS
 # ============================================================
 
 raw_cols_to_adjust = [
     c for c in fin_wide.columns
-    if c not in KEYS + ["inflation_date", "inflation_rate"]
+    if c not in [
+        "party_id",
+        "close_date",
+        "inflation_year_month",
+        "inflation_rate"
+    ]
 ]
 
 for c in raw_cols_to_adjust:
@@ -223,7 +269,7 @@ for c in raw_cols_to_adjust:
 
 
 # ============================================================
-# 9. CREATE FEATURES FROM YAML
+# 10. CREATE FEATURES FROM YAML
 # ============================================================
 
 feature_exprs = []
@@ -257,28 +303,28 @@ for feat_name, spec in feature_config.items():
 
 
 financial_features = fin_wide.select(
-    *KEYS,
+    F.col("party_id"),
+    F.col("close_date").alias("data_date"),
     *feature_exprs
 )
 
 
 # ============================================================
-# 10. READ RDS AND LEFT JOIN FEATURES INTO IT
+# 11. LEFT JOIN FEATURES INTO RDS
 # ============================================================
-
-rds = (
-    spark.table(RDS_TABLE)
-    .withColumn("close_date", F.to_date(F.col("close_date")))
-)
 
 final_df = (
     rds
-    .join(financial_features, on=KEYS, how="left")
+    .join(
+        financial_features,
+        on=["party_id", "data_date"],
+        how="left"
+    )
 )
 
 
 # ============================================================
-# 11. SAVE OUTPUT TABLE
+# 12. SAVE OUTPUT TABLE
 # ============================================================
 
 (
