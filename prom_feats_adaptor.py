@@ -204,6 +204,53 @@ raw = spark.sql(f"""
     WHERE prev_financial_indicator IN (0, 1)
 """)
 
+# ============================================================
+# INFLATION ADJUSTMENT
+# ============================================================
+
+inflation_table = "src_edwlive_dm_cad.mva_inflation_rate_new"
+
+inflation_df = (
+    spark.table(inflation_table)
+    .select(
+        F.col("year_month").cast("int").alias("inflation_year_month"),
+        F.col("inflation_rate").cast("double").alias("inflation_rate")
+    )
+)
+
+raw = (
+    raw
+    .withColumn(
+        "year_month",
+        F.date_format(
+            F.coalesce(
+                F.to_date(F.col("data_date"), "yyyyMMdd"),
+                F.to_date(F.col("data_date"), "yyyy-MM-dd"),
+                F.to_date(F.col("data_date"), "dd.MM.yyyy")
+            ),
+            "yyyyMM"
+        ).cast("int")
+    )
+    .join(
+        inflation_df,
+        F.col("year_month") == F.col("inflation_year_month"),
+        "left"
+    )
+)
+
+for raw_col in sorted(set(raw_cols.values())):
+    raw = raw.withColumn(
+        raw_col,
+        F.when(
+            F.col("inflation_rate").isNull() | (F.col("inflation_rate") == 0),
+            F.col(raw_col).cast("double")
+        ).otherwise(
+            F.col(raw_col).cast("double") / F.col("inflation_rate")
+        )
+    )
+
+raw = raw.drop("year_month", "inflation_year_month", "inflation_rate")
+
 select_exprs = [
     F.col("party_id").cast("long").alias("party_id"),
     F.coalesce(
