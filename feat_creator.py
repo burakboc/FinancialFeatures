@@ -14,10 +14,6 @@ INFLATION_TABLE = "src_edwlive_dm_cad.mva_inflation_rate_new"
 
 OUT_TABLE = "analytics_risk_sb.financial_features_all"
 
-KEYS_FIN = ["party_id", "close_date"]
-KEYS_RDS = ["party_id", "data_date"]
-
-
 # ============================================================
 # HELPER FUNCTIONS
 # ============================================================
@@ -79,6 +75,10 @@ def parse_feature_config(yaml_path):
     return parsed, sorted(all_cols)
 
 
+def sql_col_list(cols):
+    return ", ".join(cols)
+
+
 # ============================================================
 # 1. READ YAML AND FIND REQUIRED RAW COLUMNS
 # ============================================================
@@ -110,11 +110,17 @@ print(last_year_base_cols)
 
 
 # ============================================================
-# 2. READ RDS FIRST, ONLY NECESSARY COLUMNS
+# 2. READ RDS WITH spark.sql
 # ============================================================
 
+rds_cols = ["party_id", "data_date"]
+rds_column_names = sql_col_list(rds_cols)
+
 rds = (
-    spark.table(RDS_TABLE)
+    spark.sql(f"""
+        select {rds_column_names}
+        from {RDS_TABLE}
+    """)
     .select(
         F.col("party_id").cast("int").alias("party_id"),
         F.col("data_date").cast("date").alias("data_date")
@@ -124,7 +130,7 @@ rds = (
 
 
 # ============================================================
-# 3. READ FINANCIAL TABLE ONLY WITH NECESSARY COLUMNS
+# 3. READ FINANCIAL TABLE WITH spark.sql
 # close_date format example: "31.12.2019"
 # ============================================================
 
@@ -133,9 +139,13 @@ fin_cols_to_select = (
     + required_fin_cols
 )
 
+fin_column_names = sql_col_list(fin_cols_to_select)
+
 fin = (
-    spark.table(FIN_TABLE)
-    .select(*fin_cols_to_select)
+    spark.sql(f"""
+        select {fin_column_names}
+        from {FIN_TABLE}
+    """)
     .withColumn("party_id", F.col("party_id").cast("int"))
     .withColumn("prev_financial_indicator", F.col("prev_financial_indicator").cast("int"))
     .withColumn("close_date", F.to_date(F.col("close_date"), "dd.MM.yyyy"))
@@ -209,12 +219,18 @@ fin_wide = (
 
 
 # ============================================================
-# 7. READ INFLATION TABLE
+# 7. READ INFLATION TABLE WITH spark.sql
 # year_month example: 202604
 # ============================================================
 
+inflation_cols = ["year_month", "inflation_rate"]
+inflation_column_names = sql_col_list(inflation_cols)
+
 inflation = (
-    spark.table(INFLATION_TABLE)
+    spark.sql(f"""
+        select {inflation_column_names}
+        from {INFLATION_TABLE}
+    """)
     .select(
         F.col("year_month").cast("int").alias("inflation_year_month"),
         F.col("inflation_rate").cast("double").alias("inflation_rate")
@@ -225,9 +241,6 @@ inflation = (
 # ============================================================
 # 8. JOIN INFLATION RATE
 # Uses end-of-month one month before close_date.
-# Example:
-# close_date = 31.12.2019
-# inflation_year_month = 201911
 # ============================================================
 
 fin_wide = (
