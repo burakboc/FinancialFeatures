@@ -122,29 +122,49 @@ for feature_name, spec in longlist.items():
     prev_cols = args.get("columns_to_shift", []) or []
     needed_codes.update(prev_cols)
     cols_to_prev.update(prev_cols)
-
+    
 # ============================================================
-# CHECK AVAILABLE RAW COLUMNS
+# CHECK AVAILABLE RAW COLUMNS - CASE INSENSITIVE
 # ============================================================
 
-raw_table_cols = set(spark.table(raw_table).columns)
+raw_table_columns = spark.table(raw_table).columns
 
-required_key_cols = {"party_id", "data_date", "prev_financial_indicator"}
-missing_key_cols = sorted(required_key_cols - raw_table_cols)
+raw_col_lookup = {
+    col_name.lower(): col_name
+    for col_name in raw_table_columns
+}
+
+def resolve_raw_col(col_name):
+    return raw_col_lookup.get(col_name.lower())
+
+required_key_cols = ["party_id", "data_date", "prev_financial_indicator"]
+
+missing_key_cols = [
+    col_name
+    for col_name in required_key_cols
+    if resolve_raw_col(col_name) is None
+]
 
 if missing_key_cols:
     raise ValueError(f"Missing required key columns in raw table: {missing_key_cols}")
 
+actual_party_id_col = resolve_raw_col("party_id")
+actual_data_date_col = resolve_raw_col("data_date")
+actual_prev_indicator_col = resolve_raw_col("prev_financial_indicator")
+
 available_codes = set()
 missing_code_to_raw_col = {}
+code_to_actual_raw_col = {}
 
 for code in needed_codes:
-    raw_col = mapping.get(code, code)
+    mapped_raw_col = mapping.get(code, code)
+    actual_raw_col = resolve_raw_col(mapped_raw_col)
 
-    if raw_col in raw_table_cols:
+    if actual_raw_col is not None:
         available_codes.add(code)
+        code_to_actual_raw_col[code] = actual_raw_col
     else:
-        missing_code_to_raw_col[code] = raw_col
+        missing_code_to_raw_col[code] = mapped_raw_col
 
 calculable_features = []
 skipped_features = {}
@@ -158,42 +178,38 @@ for feature_name in longlist.keys():
     else:
         calculable_features.append(feature_name)
 
-calculable_features_set = set(calculable_features)
-
 print("=" * 100)
 print(f"Available raw codes: {len(available_codes)}")
 print(f"Missing raw codes: {len(missing_code_to_raw_col)}")
 print(f"Calculable features: {len(calculable_features)}")
 print(f"Skipped features: {len(skipped_features)}")
 
-if missing_code_to_raw_col:
-    print("\nMissing raw codes / raw table columns:")
-    for code, raw_col in sorted(missing_code_to_raw_col.items()):
-        print(f"  {code} -> {raw_col}")
+print("\nAvailable code -> actual raw table column:")
+for code in sorted(available_codes):
+    print(f"  {code} -> {code_to_actual_raw_col[code]}")
 
-print("\nCalculated features:")
-for feature_name in calculable_features:
-    print(f"  {feature_name}")
-
-print("\nSkipped features:")
-for feature_name, missing in skipped_features.items():
-    print(f"  {feature_name}: missing {missing}")
+print("\nMissing raw codes / expected raw table columns:")
+for code, raw_col in sorted(missing_code_to_raw_col.items()):
+    print(f"  {code} -> {raw_col}")
 
 print("=" * 100)
 
 needed_codes = needed_codes & available_codes
 cols_to_prev = cols_to_prev & available_codes
 
-raw_cols = {code: mapping.get(code, code) for code in needed_codes}
+raw_cols = {
+    code: code_to_actual_raw_col[code]
+    for code in needed_codes
+}
 
 # ============================================================
 # READ RAW DATA FROM HIVE
 # ============================================================
 
 column_names = [
-    "party_id",
-    "data_date",
-    "prev_financial_indicator",
+    actual_party_id_col,
+    actual_data_date_col,
+    actual_prev_indicator_col,
 ] + sorted(set(raw_cols.values()))
 
 column_names_sql = ", ".join(q(x) for x in column_names)
@@ -201,7 +217,7 @@ column_names_sql = ", ".join(q(x) for x in column_names)
 raw = spark.sql(f"""
     SELECT {column_names_sql}
     FROM {raw_table}
-    WHERE prev_financial_indicator IN (0, 1)
+    WHERE {q(actual_prev_indicator_col)} IN (0, 1)
 """)
 
 # ============================================================
@@ -252,13 +268,13 @@ for raw_col in sorted(set(raw_cols.values())):
 raw = raw.drop("year_month", "inflation_year_month", "inflation_rate")
 
 select_exprs = [
-    F.col("party_id").cast("long").alias("party_id"),
+    F.col(actual_party_id_col).cast("long").alias("party_id"),
     F.coalesce(
-        F.to_date(F.col("data_date"), "yyyyMMdd"),
-        F.to_date(F.col("data_date"), "yyyy-MM-dd"),
-        F.to_date(F.col("data_date"), "dd.MM.yyyy")
+        F.to_date(F.col(actual_data_date_col), "yyyyMMdd"),
+        F.to_date(F.col(actual_data_date_col), "yyyy-MM-dd"),
+        F.to_date(F.col(actual_data_date_col), "dd.MM.yyyy")
     ).alias("data_date"),
-    F.col("prev_financial_indicator").cast("int").alias("prev_financial_indicator"),
+    F.col(actual_prev_indicator_col).cast("int").alias("prev_financial_indicator"),
 ]
 
 for code in sorted(needed_codes):
