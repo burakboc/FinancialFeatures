@@ -355,274 +355,166 @@ for feature_name in calculable_features:
 # 3) CUSTOM FINANCIAL RATIOS
 # ============================================================
 
-joined = feature_df.join(base_df, on=["party_id", "data_date"], how="left")
+# ============================================================
+# 3) CUSTOM FINANCIAL RATIOS
+# ============================================================
 
-custom_exprs = {
-    "DC_31": safe_div(
-        (
-            c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-            + c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev")
-        ) / 2,
-        c("P_3") - c("P_31")
-    ),
+joined = feature_df
 
-    "EF_13": safe_div(
-        c("G_0") + c("A_15") - c("A_15_prev"),
-        c("A_15")
-    ),
-
-    "EF_14": safe_div(
-        c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        + c("A_15") - c("A_15_prev"),
-        c("A_15")
-    ),
-
-    "EF_17": safe_div(
-        365 * (c("A_15") + c("A_15_prev")) / 2,
-        c("G_62")
-    ),
-
-    "EF_19": safe_div(
-        365 * ((c("P_32") + c("P_42") + c("P_32_prev") + c("P_42_prev")) / 2),
-        c("G_62")
-    ),
-
-    "EF_20": safe_div(
-        365 * ((c("A_12") + c("A_22") + c("A_12_prev") + c("A_22_prev")) / 2),
-        c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612"))
-    ),
-
-    "FS_12": safe_div(
-        c("P_30") - c("P_30_prev") + c("P_40") - c("P_40_prev"),
-        c("A_1") + c("A_2")
-    ),
-
-    "FS_53_CONT": safe_div(
-        (
-            c("G_600") + c("G_601") + c("G_602")
-            - (c("G_610") + c("G_611") + c("G_612"))
-            + c("P_35") + c("P_35_prev")
-        ) / 2 + c("P_34"),
-        (c("A_17") + c("A_17_prev")) / 2 + c("A_15") + c("G_62")
-    ),
-
-    "FS_55_CONT": safe_div(
-        (c("P_35") + c("P_35_prev")) / 2,
-        (c("A_17") + c("A_17_prev")) / 2
-    ),
-
-    "FS_56_CONT": safe_div(
-        (
-            c("G_600") + c("G_601") + c("G_602")
-            - (c("G_610") + c("G_611") + c("G_612"))
-            + c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-            + c("P_35") + c("P_35_prev")
-        ) / 2,
-        (c("A_17") + c("A_17_prev") + c("G_62") + c("G_62_prev")) / 2
-    ),
-
-    "LQ_13": safe_div(
-        c("A_1") - c("P_3"),
-        c("G_60") + c("A_15") - c("A_15_prev")
-    ),
-
-    "LQ_14": safe_div(
-        c("A_1") - c("P_3"),
-        c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        + c("A_15") - c("A_15_prev")
-    ),
-
-    "LQ_50": safe_div(
-        c("A_12") + c("A_10") + c("A_11") + (c("A_15") + c("A_15_prev")) / 2,
-        c("P_3") - c("P_331")
-    ),
-
-    "PROF_32": safe_div(
-        c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        - (c("A_25") - c("A_25_prev") + c("Amortisman_ve_Itfa_Giderleri")),
-        c("G_66") - c("G_642")
-    ),
-
-    "PROF_33": safe_div(
-        c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        - (c("A_25") - c("A_25_prev") + c("Amortisman_ve_Itfa_Giderleri")),
-        c("P_30") + c("P_40") + c("G_66") - c("A_10")
-    ),
-
-    "TR_01": safe_div(c("G_60") - c("G_60_prev"), c("G_60_prev")),
-    "TR_04": safe_div(c("G_692") - c("G_692_prev"), c("G_692_prev")),
-
-    "TR_05": safe_div(
-        c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        - (c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev")),
-        c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev")
-    ),
-
-    "TR_06": safe_div(c("P_5") - c("P_5_prev"), c("P_5_prev")),
-    "TR_07": safe_div(c("P_3") - c("P_3_prev"), c("P_3_prev")),
-
-    "TR_08": safe_div(
-        c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        + c("G_62")
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-            + c("G_62_prev")
-        ),
-        c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-        - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        + c("G_62_prev")
-    ),
-
-    "TR_09": safe_div(
-        c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        ),
-        c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-        - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-    ),
-
-    "TR_10": safe_div(
-        c("A_1") + c("A_2") - (c("A_1_prev") + c("A_2_prev")),
-        c("A_1_prev") + c("A_2_prev")
-    ),
-
-    "TR_11": safe_div(
-        c("A_1") + c("P_3") - (c("A_1_prev") + c("P_3_prev")),
-        c("A_1_prev") + c("P_3_prev")
-    ),
-
-    "TR_12": safe_div(c("P_4") - c("P_4_prev"), c("P_4_prev")),
-    "TR_13": safe_div(c("A_25") - c("A_25_prev"), c("A_25_prev")),
-    "TR_14": safe_div(c("A_2") - c("A_2_prev"), c("A_2_prev")),
-
-    "TR_15": safe_div(
-        c("A_12")
-        - (c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")))
-        - (
-            c("A_12_prev")
-            - (
-                c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-                - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-            )
-        ),
-        c("A_12_prev")
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        )
-    ),
-
-    "TR_17": safe_div(
-        c("P_30") + c("P_40") - (c("P_30") + c("P_40_prev")),
-        c("P_30_prev") + c("P_40_prev")
-    ),
-
-    "TR_18": safe_div(c("P_30") - c("P_30_prev"), c("P_30_prev")),
-    "TR_19": safe_div(c("P_40") - c("P_40_prev"), c("P_40_prev")),
-
-    "CONST_06": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri"),
-        c("G_66")
-    ),
-
-    "CONST_07": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        - (c("A_12") - c("A_12_prev"))
-        + (c("P_32") - c("P_32_prev")),
-        c("P_30") + c("G_66")
-    ),
-
-    "CONST_09": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri"),
-        c("P_3") + c("P_40") + c("P_42") + c("P_43")
-    ),
-
-    "CONST_11": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691"),
-        c("P_3") + c("P_40") + c("P_42") + c("P_43") - c("P_35")
-    ),
-
-    "CONST_17": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        + c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        ),
-        c("G_66")
-    ),
-
-    "CONST_18": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        + c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        )
-        - (c("A_12") - c("A_12_prev"))
-        + (c("P_32") - c("P_32_prev")),
-        c("P_30") + c("G_66")
-    ),
-
-    "CONST_20": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        + c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        ),
-        c("P_3") + c("P_40") + c("P_42") + c("P_43")
-    ),
-
-    "CONST_22": safe_div(
-        c("P_35") - c("A_17")
-        - (c("P_35_prev") - c("A_17_prev"))
-        + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
-        + c("G_600") + c("G_601") + c("G_602")
-        - (c("G_610") + c("G_611") + c("G_612"))
-        - (
-            c("G_600_prev") + c("G_601_prev") + c("G_602_prev")
-            - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))
-        ),
-        c("P_3") + c("P_40") + c("P_42") + c("P_43") - c("P_35")
-    ),
-
-    "CONST_FS_12": safe_div(
-        c("P_30") - c("P_30_prev") + c("P_40") - c("P_40_prev"),
-        c("A_1") + c("A_2") - c("A_17")
-    ),
-
-    "CONST_TR_02": safe_div(
-        c("A_1") + c("A_2") - c("A_17")
-        - (c("A_1_prev") + c("A_2_prev") - c("A_17_prev")),
-        c("A_1_prev") + c("A_2_prev") - c("A_17_prev")
-    ),
+custom_deps = {
+    "DC_31": ["G_692", "G_66", "G_691", "Amortisman_ve_Itfa_Giderleri", "G_692_prev", "G_66_prev", "G_691_prev", "Amortisman_ve_Itfa_Giderleri_prev", "P_3", "P_31"],
+    "EF_13": ["G_0", "A_15", "A_15_prev"],
+    "EF_14": ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "A_15", "A_15_prev"],
+    "EF_17": ["A_15", "A_15_prev", "G_62"],
+    "EF_19": ["P_32", "P_42", "P_32_prev", "P_42_prev", "G_62"],
+    "EF_20": ["A_12", "A_22", "A_12_prev", "A_22_prev", "G_600", "G_601", "G_602", "G_610", "G_611", "G_612"],
+    "FS_12": ["P_30", "P_30_prev", "P_40", "P_40_prev", "A_1", "A_2"],
+    "FS_53_CONT": ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "P_35", "P_35_prev", "P_34", "A_17", "A_17_prev", "A_15", "G_62"],
+    "FS_55_CONT": ["P_35", "P_35_prev", "A_17", "A_17_prev"],
+    "FS_56_CONT": ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "G_600_prev", "G_601_prev", "G_602_prev", "G_610_prev", "G_611_prev", "G_612_prev", "P_35", "P_35_prev", "A_17", "A_17_prev", "G_62", "G_62_prev"],
+    "LQ_13": ["A_1", "P_3", "G_60", "A_15", "A_15_prev"],
+    "LQ_14": ["A_1", "P_3", "G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "A_15", "A_15_prev"],
+    "LQ_50": ["A_12", "A_10", "A_11", "A_15", "A_15_prev", "P_3", "P_331"],
+    "PROF_32": ["G_692", "G_66", "G_691", "Amortisman_ve_Itfa_Giderleri", "A_25", "A_25_prev", "G_642"],
+    "PROF_33": ["G_692", "G_66", "G_691", "Amortisman_ve_Itfa_Giderleri", "A_25", "A_25_prev", "P_30", "P_40", "A_10"],
+    "TR_01": ["G_60", "G_60_prev"],
+    "TR_04": ["G_692", "G_692_prev"],
+    "TR_05": ["G_692", "G_66", "G_691", "Amortisman_ve_Itfa_Giderleri", "G_692_prev", "G_66_prev", "G_691_prev", "Amortisman_ve_Itfa_Giderleri_prev"],
+    "TR_06": ["P_5", "P_5_prev"],
+    "TR_07": ["P_3", "P_3_prev"],
+    "TR_08": ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "G_62", "G_600_prev", "G_601_prev", "G_602_prev", "G_610_prev", "G_611_prev", "G_612_prev", "G_62_prev"],
+    "TR_09": ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "G_600_prev", "G_601_prev", "G_602_prev", "G_610_prev", "G_611_prev", "G_612_prev"],
+    "TR_10": ["A_1", "A_2", "A_1_prev", "A_2_prev"],
+    "TR_11": ["A_1", "P_3", "A_1_prev", "P_3_prev"],
+    "TR_12": ["P_4", "P_4_prev"],
+    "TR_13": ["A_25", "A_25_prev"],
+    "TR_14": ["A_2", "A_2_prev"],
+    "TR_15": ["A_12", "G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "A_12_prev", "G_600_prev", "G_601_prev", "G_602_prev", "G_610_prev", "G_611_prev", "G_612_prev"],
+    "TR_17": ["P_30", "P_40", "P_30_prev", "P_40_prev"],
+    "TR_18": ["P_30", "P_30_prev"],
+    "TR_19": ["P_40", "P_40_prev"],
+    "CONST_FS_12": ["P_30", "P_30_prev", "P_40", "P_40_prev", "A_1", "A_2", "A_17"],
+    "CONST_TR_02": ["A_1", "A_2", "A_17", "A_1_prev", "A_2_prev", "A_17_prev"],
 }
+
+for x in ["CONST_06", "CONST_09"]:
+    custom_deps[x] = ["P_35", "A_17", "P_35_prev", "A_17_prev", "G_692", "G_66", "G_691", "Amortisman_ve_Itfa_Giderleri"]
+
+custom_deps["CONST_07"] = custom_deps["CONST_06"] + ["A_12", "A_12_prev", "P_32", "P_32_prev", "P_30"]
+custom_deps["CONST_11"] = ["P_35", "A_17", "P_35_prev", "A_17_prev", "G_692", "G_66", "G_691", "P_3", "P_40", "P_42", "P_43"]
+custom_deps["CONST_17"] = custom_deps["CONST_06"] + ["G_600", "G_601", "G_602", "G_610", "G_611", "G_612", "G_600_prev", "G_601_prev", "G_602_prev", "G_610_prev", "G_611_prev", "G_612_prev"]
+custom_deps["CONST_18"] = custom_deps["CONST_17"] + ["A_12", "A_12_prev", "P_32", "P_32_prev", "P_30"]
+custom_deps["CONST_20"] = custom_deps["CONST_17"] + ["P_3", "P_40", "P_42", "P_43"]
+custom_deps["CONST_22"] = custom_deps["CONST_20"]
+
+
+def get_custom_expr(feature_name):
+    if feature_name == "DC_31":
+        return safe_div((c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") + c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev")) / 2, c("P_3") - c("P_31"))
+
+    if feature_name == "EF_13":
+        return safe_div(c("G_0") + c("A_15") - c("A_15_prev"), c("A_15"))
+
+    if feature_name == "EF_14":
+        return safe_div(c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) + c("A_15") - c("A_15_prev"), c("A_15"))
+
+    if feature_name == "EF_17":
+        return safe_div(365 * (c("A_15") + c("A_15_prev")) / 2, c("G_62"))
+
+    if feature_name == "EF_19":
+        return safe_div(365 * ((c("P_32") + c("P_42") + c("P_32_prev") + c("P_42_prev")) / 2), c("G_62"))
+
+    if feature_name == "EF_20":
+        return safe_div(365 * ((c("A_12") + c("A_22") + c("A_12_prev") + c("A_22_prev")) / 2), c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")))
+
+    if feature_name == "FS_12":
+        return safe_div(c("P_30") - c("P_30_prev") + c("P_40") - c("P_40_prev"), c("A_1") + c("A_2"))
+
+    if feature_name == "FS_53_CONT":
+        return safe_div((c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) + c("P_35") + c("P_35_prev")) / 2 + c("P_34"), (c("A_17") + c("A_17_prev")) / 2 + c("A_15") + c("G_62"))
+
+    if feature_name == "FS_55_CONT":
+        return safe_div((c("P_35") + c("P_35_prev")) / 2, (c("A_17") + c("A_17_prev")) / 2)
+
+    if feature_name == "FS_56_CONT":
+        return safe_div((c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) + c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")) + c("P_35") + c("P_35_prev")) / 2, (c("A_17") + c("A_17_prev") + c("G_62") + c("G_62_prev")) / 2)
+
+    if feature_name == "LQ_13":
+        return safe_div(c("A_1") - c("P_3"), c("G_60") + c("A_15") - c("A_15_prev"))
+
+    if feature_name == "LQ_14":
+        return safe_div(c("A_1") - c("P_3"), c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) + c("A_15") - c("A_15_prev"))
+
+    if feature_name == "LQ_50":
+        return safe_div(c("A_12") + c("A_10") + c("A_11") + (c("A_15") + c("A_15_prev")) / 2, c("P_3") - c("P_331"))
+
+    if feature_name == "PROF_32":
+        return safe_div(c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") - (c("A_25") - c("A_25_prev") + c("Amortisman_ve_Itfa_Giderleri")), c("G_66") - c("G_642"))
+
+    if feature_name == "PROF_33":
+        return safe_div(c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") - (c("A_25") - c("A_25_prev") + c("Amortisman_ve_Itfa_Giderleri")), c("P_30") + c("P_40") + c("G_66") - c("A_10"))
+
+    if feature_name == "TR_01": return safe_div(c("G_60") - c("G_60_prev"), c("G_60_prev"))
+    if feature_name == "TR_04": return safe_div(c("G_692") - c("G_692_prev"), c("G_692_prev"))
+    if feature_name == "TR_06": return safe_div(c("P_5") - c("P_5_prev"), c("P_5_prev"))
+    if feature_name == "TR_07": return safe_div(c("P_3") - c("P_3_prev"), c("P_3_prev"))
+    if feature_name == "TR_12": return safe_div(c("P_4") - c("P_4_prev"), c("P_4_prev"))
+    if feature_name == "TR_13": return safe_div(c("A_25") - c("A_25_prev"), c("A_25_prev"))
+    if feature_name == "TR_14": return safe_div(c("A_2") - c("A_2_prev"), c("A_2_prev"))
+    if feature_name == "TR_18": return safe_div(c("P_30") - c("P_30_prev"), c("P_30_prev"))
+    if feature_name == "TR_19": return safe_div(c("P_40") - c("P_40_prev"), c("P_40_prev"))
+
+    if feature_name == "TR_05":
+        return safe_div(c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") - (c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev")), c("G_692_prev") + c("G_66_prev") + c("G_691_prev") + c("Amortisman_ve_Itfa_Giderleri_prev"))
+
+    if feature_name == "TR_08":
+        return safe_div(c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) + c("G_62") - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")) + c("G_62_prev")), c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")) + c("G_62_prev"))
+
+    if feature_name == "TR_09":
+        return safe_div(c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))), c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")))
+
+    if feature_name == "TR_10":
+        return safe_div(c("A_1") + c("A_2") - (c("A_1_prev") + c("A_2_prev")), c("A_1_prev") + c("A_2_prev"))
+
+    if feature_name == "TR_11":
+        return safe_div(c("A_1") + c("P_3") - (c("A_1_prev") + c("P_3_prev")), c("A_1_prev") + c("P_3_prev"))
+
+    if feature_name == "TR_15":
+        return safe_div(c("A_12") - (c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612"))) - (c("A_12_prev") - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")))), c("A_12_prev") - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))))
+
+    if feature_name == "TR_17":
+        return safe_div(c("P_30") + c("P_40") - (c("P_30_prev") + c("P_40_prev")), c("P_30_prev") + c("P_40_prev"))
+
+    if feature_name in ["CONST_06", "CONST_09"]:
+        numerator = c("P_35") - c("A_17") - (c("P_35_prev") - c("A_17_prev")) + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri")
+        denominator = c("G_66") if feature_name == "CONST_06" else c("P_3") + c("P_40") + c("P_42") + c("P_43")
+        return safe_div(numerator, denominator)
+
+    if feature_name == "CONST_07":
+        return safe_div(c("P_35") - c("A_17") - (c("P_35_prev") - c("A_17_prev")) + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") - (c("A_12") - c("A_12_prev")) + (c("P_32") - c("P_32_prev")), c("P_30") + c("G_66"))
+
+    if feature_name == "CONST_11":
+        return safe_div(c("P_35") - c("A_17") - (c("P_35_prev") - c("A_17_prev")) + c("G_692") + c("G_66") + c("G_691"), c("P_3") + c("P_40") + c("P_42") + c("P_43") - c("P_35"))
+
+    if feature_name in ["CONST_17", "CONST_20", "CONST_22"]:
+        numerator = c("P_35") - c("A_17") - (c("P_35_prev") - c("A_17_prev")) + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") + c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev")))
+        if feature_name == "CONST_17":
+            return safe_div(numerator, c("G_66"))
+        if feature_name == "CONST_20":
+            return safe_div(numerator, c("P_3") + c("P_40") + c("P_42") + c("P_43"))
+        return safe_div(numerator, c("P_3") + c("P_40") + c("P_42") + c("P_43") - c("P_35"))
+
+    if feature_name == "CONST_18":
+        return safe_div(c("P_35") - c("A_17") - (c("P_35_prev") - c("A_17_prev")) + c("G_692") + c("G_66") + c("G_691") + c("Amortisman_ve_Itfa_Giderleri") + c("G_600") + c("G_601") + c("G_602") - (c("G_610") + c("G_611") + c("G_612")) - (c("G_600_prev") + c("G_601_prev") + c("G_602_prev") - (c("G_610_prev") + c("G_611_prev") + c("G_612_prev"))) - (c("A_12") - c("A_12_prev")) + (c("P_32") - c("P_32_prev")), c("P_30") + c("G_66"))
+
+    if feature_name == "CONST_FS_12":
+        return safe_div(c("P_30") - c("P_30_prev") + c("P_40") - c("P_40_prev"), c("A_1") + c("A_2") - c("A_17"))
+
+    if feature_name == "CONST_TR_02":
+        return safe_div(c("A_1") + c("A_2") - c("A_17") - (c("A_1_prev") + c("A_2_prev") - c("A_17_prev")), c("A_1_prev") + c("A_2_prev") - c("A_17_prev"))
+
+    return None
+
 
 for feature_name in calculable_features:
     spec = longlist[feature_name]
@@ -630,12 +522,24 @@ for feature_name in calculable_features:
     if spec["func"] != "calculate_custom_financial_ratio":
         continue
 
-    if feature_name not in custom_exprs:
+    missing_cols = [
+        col_name for col_name in custom_deps.get(feature_name, [])
+        if col_name not in joined.columns
+    ]
+
+    if missing_cols:
+        skipped_features[feature_name] = missing_cols
+        print(f"WARNING: Skipping {feature_name}, missing columns: {missing_cols}")
+        continue
+
+    expr = get_custom_expr(feature_name)
+
+    if expr is None:
         skipped_features[feature_name] = ["custom formula not implemented"]
         print(f"WARNING: Skipping {feature_name}, custom formula not implemented.")
         continue
 
-    joined = joined.withColumn(feature_name, custom_exprs[feature_name].cast("double"))
+    joined = joined.withColumn(feature_name, expr.cast("double"))
 
 # ============================================================
 # FINAL SELECT + SAVE TO HIVE
