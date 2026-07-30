@@ -204,3 +204,163 @@ neighbor_comparison.select(
         2
     ).alias("difference_percentage_points")
 ).show(100, truncate=False)
+
+# PLOTS
+
+monthly_nulls_pd = (
+    monthly_nulls_long
+    .orderBy("year_month", "feature")
+    .toPandas()
+)
+
+# PLOT SPECIFIC 
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+feature_to_plot = "your_feature_name"
+
+plot_df = (
+    monthly_nulls_pd[
+        monthly_nulls_pd["feature"] == feature_to_plot
+    ]
+    .copy()
+)
+
+plot_df["year_month"] = pd.to_datetime(
+    plot_df["year_month"],
+    format="%Y-%m"
+)
+
+plot_df = plot_df.sort_values("year_month")
+
+plt.figure(figsize=(12, 5))
+
+plt.plot(
+    plot_df["year_month"],
+    plot_df["null_rate"] * 100,
+    marker="o"
+)
+
+# Highlight June 2020
+target_date = pd.Timestamp("2020-06-01")
+
+target_row = plot_df[
+    plot_df["year_month"] == target_date
+]
+
+if not target_row.empty:
+    target_rate = target_row["null_rate"].iloc[0] * 100
+
+    plt.scatter(
+        target_date,
+        target_rate,
+        s=120,
+        zorder=3
+    )
+
+    plt.annotate(
+        f"2020-06: {target_rate:.2f}%",
+        xy=(target_date, target_rate),
+        xytext=(10, 15),
+        textcoords="offset points"
+    )
+
+plt.axvline(
+    target_date,
+    linestyle="--",
+    alpha=0.7,
+    label="2020-06"
+)
+
+plt.title(f"Monthly Null Rate — {feature_to_plot}")
+plt.xlabel("Month")
+plt.ylabel("Null Rate (%)")
+plt.xticks(rotation=45)
+plt.grid(alpha=0.3)
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+# GET TOP 10 UNUSUALS
+
+top_n = 10
+
+top_features = (
+    null_comparison
+    .orderBy(F.desc("absolute_difference"))
+    .limit(top_n)
+    .select("feature")
+    .rdd.flatMap(lambda row: row)
+    .collect()
+)
+
+top_features
+
+# PLOT UNUSUALS
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+target_date = pd.Timestamp("2020-06-01")
+
+for feature in top_features:
+
+    plot_df = (
+        monthly_nulls_pd[
+            monthly_nulls_pd["feature"] == feature
+        ]
+        .copy()
+    )
+
+    plot_df["year_month"] = pd.to_datetime(
+        plot_df["year_month"],
+        format="%Y-%m"
+    )
+
+    plot_df = plot_df.sort_values("year_month")
+
+    plt.figure(figsize=(12, 5))
+
+    plt.plot(
+        plot_df["year_month"],
+        plot_df["null_rate"] * 100,
+        marker="o"
+    )
+
+    plt.axvline(
+        target_date,
+        linestyle="--",
+        alpha=0.7,
+        label="2020-06"
+    )
+
+    target_row = plot_df[
+        plot_df["year_month"] == target_date
+    ]
+
+    if not target_row.empty:
+        target_rate = target_row["null_rate"].iloc[0] * 100
+
+        plt.scatter(
+            target_date,
+            target_rate,
+            s=120,
+            zorder=3
+        )
+
+        plt.annotate(
+            f"{target_rate:.2f}%",
+            xy=(target_date, target_rate),
+            xytext=(10, 15),
+            textcoords="offset points"
+        )
+
+    plt.title(f"Monthly Null Rate — {feature}")
+    plt.xlabel("Month")
+    plt.ylabel("Null Rate (%)")
+    plt.xticks(rotation=45)
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
