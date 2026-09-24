@@ -1,35 +1,7 @@
 from pyspark.sql import functions as F
 
-cr_rds_j = (
-    cr_rds
-    .withColumn("party_id_join", F.col("party_id").cast("decimal(16,0)"))
-    .withColumn("month_start_join", F.to_date("month_start", "yyyy-MM-dd"))
-)
-
-fin_j = (
-    fin
-    .withColumn("party_id_join", F.col("party_id").cast("decimal(16,0)"))
-    .withColumn("data_date_join", F.col("data_date").cast("date"))
-)
-
-joined = (
-    cr_rds.alias("r")
-    .join(
-        fin.alias("f"),
-        (F.col("r.party_id").cast("decimal(16,0)") == F.col("f.party_id")) &
-        (F.date_sub(F.to_date("r.month_start", "yyyy-MM-dd"), 1) == F.col("f.data_date")),
-        "left"
-    )
-)
-
-
-
-#####
-
-from pyspark.sql import functions as F
-
 # ============================================================
-# 1. READ INFLATION TABLE
+# READ INFLATION TABLE
 # ============================================================
 
 INFLATION_TABLE = "src_edwlive_dm_cad.mva_trend_inflation_rate"
@@ -45,58 +17,7 @@ inflation = (
 
 
 # ============================================================
-# 2. JOIN CR_RDS WITH FINANCIAL TABLE
-# ============================================================
-
-joined = (
-    cr_rds.alias("r")
-    .join(
-        fin.alias("f"),
-        (
-            (F.col("r.party_id") == F.col("f.party_id"))
-            &
-            (
-                F.date_sub(
-                    F.to_date(F.col("r.month_start"), "yyyy-MM-dd"),
-                    1
-                )
-                == F.to_date(F.col("f.data_date"))
-            )
-        ),
-        "left"
-    )
-)
-
-
-# ============================================================
-# 3. JOIN INFLATION RATE USING ACTUAL CLOSE_DATE
-# ============================================================
-#
-# close_date is already the actual historical statement date.
-#
-# Therefore:
-#   prev_financial_indicator = 0 -> use its close_date
-#   prev_financial_indicator = 1 -> use its close_date
-#
-# No additional -12 month adjustment is required.
-# ============================================================
-
-joined = (
-    joined
-    .withColumn(
-        "close_date_parsed",
-        F.to_date(F.col("f.close_date"))
-    )
-    .join(
-        inflation.alias("i"),
-        F.col("close_date_parsed") == F.col("i.inf_data_date"),
-        "left"
-    )
-)
-
-
-# ============================================================
-# 4. FINANCIAL COLUMNS TO INFLATION-ADJUST
+# FINANCIAL COLUMNS TO INFLATION-ADJUST
 # ============================================================
 
 financial_cols = [
@@ -117,37 +38,13 @@ financial_cols = [
 
 
 # ============================================================
-# 5. APPLY INFLATION ADJUSTMENT
+# CLEAN UP EXISTING JOINED TABLE
 # ============================================================
+# We already have cr_rds + fin in `joined`.
 #
-# adjusted_value = original_value / inflation_rate
-#
-# NULL financial value  -> NULL
-# NULL inflation rate   -> NULL
-# inflation rate = 0    -> NULL
-# ============================================================
-
-for col_name in financial_cols:
-    joined = joined.withColumn(
-        col_name,
-        F.when(
-            F.col(f"f.{col_name}").isNull(),
-            F.lit(None).cast("double")
-        )
-        .when(
-            F.col("i.inflation_rate").isNull()
-            | (F.col("i.inflation_rate") == 0),
-            F.lit(None).cast("double")
-        )
-        .otherwise(
-            F.col(f"f.{col_name}").cast("double")
-            / F.col("i.inflation_rate")
-        )
-    )
-
-
-# ============================================================
-# 6. FINAL SELECT
+# Select the RDS keys once and keep the financial columns.
+# close_date is already the ACTUAL historical financial
+# statement date, including for prev_financial_indicator = 1.
 # ============================================================
 
 joined = joined.select(
@@ -160,15 +57,68 @@ joined = joined.select(
         "prev_financial_indicator"
     ),
     F.col("f.financial_table_id").alias("financial_table_id"),
-    F.col("f.close_date").alias("close_date"),
+    F.to_date(F.col("f.close_date")).alias("close_date"),
 
-    # Inflation-adjusted financial values
     *[
-        F.col(col_name)
+        F.col(f"f.{col_name}").cast("double").alias(col_name)
         for col_name in financial_cols
-    ],
-
-    # Keep temporarily for checking that the correct
-    # inflation coefficient was joined
-    F.col("i.inflation_rate").alias("inflation_rate")
+    ]
 )
+
+
+# ============================================================
+# JOIN INFLATION USING CLOSE_DATE
+# ============================================================
+#
+# No special prev_financial_indicator logic is needed:
+#
+# prev = 0 -> close_date is the current statement's date
+# prev = 1 -> close_date is already the historical statement date
+#
+# Therefore each financial statement automatically receives
+# the inflation coefficient corresponding to its own close_date.
+# ============================================================
+
+joined = (
+    joined
+    .join(
+        inflation,
+        F.col("close_date") == F.col("inf_data_date"),
+        "left"
+    )
+)
+
+
+# ============================================================
+# APPLY INFLATION ADJUSTMENT
+# ============================================================
+#
+# adjusted value = original value / inflation_rate
+#
+# Existing NULL financial values remain NULL.
+# Missing/zero inflation rates result in NULL.
+# ============================================================
+
+for col_name in financial_cols:
+    joined = joined.withColumn(
+        col_name,
+        F.when(
+            F.col(col_name).isNull(),
+            F.lit(None).cast("double")
+        )
+        .when(
+            F.col("inflation_rate").isNull()
+            | (F.col("inflation_rate") == 0),
+            F.lit(None).cast("double")
+        )
+        .otherwise(
+            F.col(col_name) / F.col("inflation_rate")
+        )
+    )
+
+
+# ============================================================
+# REMOVE INFLATION JOIN KEY
+# ============================================================
+
+joined = joined.drop("inf_data_date")
